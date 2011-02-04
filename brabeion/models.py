@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 class BadgeAward(models.Model):
     user = models.ForeignKey(User, related_name="badges_earned")
     awarded_at = models.DateTimeField(default=datetime.now)
+    date = models.DateField(auto_now_add=True)
     slug = models.CharField(max_length=255)
     level = models.IntegerField()
     
